@@ -14,5 +14,5 @@ int print_char(char *buff, va_list args, int buff_count)
 
 	buff[buff_count++] = ch;
 
-	return buff_count;
+	return (buff_count);
 }

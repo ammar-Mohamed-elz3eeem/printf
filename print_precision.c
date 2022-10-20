@@ -2,16 +2,14 @@
 
 /**
  * print_precision - this will print char to the standard output
- * @args: argument list of variadic function
  * @buff: buff to print data in
  * @buff_count: count of the current integer in buffer
  * Return: current buff count
  */
 
-int print_precision(char *buff, va_list args, int buff_count)
+int print_precision(char *buff, int buff_count)
 {
 	char precision;
-	int i;
 
 	precision = '%';
 	buff[buff_count++] = precision;

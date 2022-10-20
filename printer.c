@@ -3,6 +3,10 @@
 /**
  * printer - print a charchter to the output stream
  * @specefier: charchter to specify which specify argument type
+ * @args: argument list of variadic function
+ * @buff: buff to print data in
+ * @buff_count: count of the current integer in buffer
+ * Return: current buff count
  */
 
 int printer(char specefier, va_list args, char *buff, int buff_count)
@@ -13,7 +17,6 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 	    {'d', print_int},
 	    {'c', print_char},
 	    {'s', print_str},
-	    {'%', print_precision},
 	    {'\0', NULL}};
 
 	for (i = 0; printers[i].specefier != '\0'; i++)
@@ -24,5 +27,5 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 		}
 	}
 
-	return buff_count;
+	return (buff_count);
 }

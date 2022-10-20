@@ -8,9 +8,10 @@
 
 void write_buffer(char *buffer, int buff_count)
 {
+	int i = 0;
+
 	if (buffer == NULL)
 		return;
-	int i = 0;
 
 	write(i, buffer, buff_count);
 }
