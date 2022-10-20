@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _printf - print chars to stdout in formatted way

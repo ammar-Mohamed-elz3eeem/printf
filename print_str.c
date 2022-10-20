@@ -11,13 +11,15 @@
 int print_str(char *buff, va_list args, int buff_count)
 {
 	char *str;
-	int i;
+	int i = 0;
 
 	str = va_arg(args, char *);
 
 	while (str[i] != '\0')
 	{
-		buff[buff_count++] = str[i++];
+		buff[buff_count] = str[i];
+		i++;
+		buff_count++;
 	}
 
 	return (buff_count);

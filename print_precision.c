@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_precision - this will print char to the standard output
@@ -15,8 +14,6 @@ int print_precision(char *buff, va_list args, int buff_count)
 	int i;
 
 	precision = '%';
-	printf("I should be called with %d\n", precision);
-
 	buff[buff_count++] = precision;
 
 	return (buff_count);

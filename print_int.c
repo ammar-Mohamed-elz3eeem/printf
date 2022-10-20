@@ -1,6 +1,5 @@
 #include "main.h"
 #include "limits.h"
-#include <stdio.h>
 
 /**
  * print_int - prints an integer to the output stream
