@@ -13,14 +13,12 @@ int print_binary(char *buff, va_list args, int buff_count)
 {
 	unsigned int bin;
 	unsigned int temp = 0;
-	char *binary;
+	char binary[255];
 	int idx = 0;
 	int bin_len;
 
 	bin = va_arg(args, unsigned int);
 	temp = bin;
-
-	binary = malloc(sizeof(int));
 
 	while (temp > 0)
 	{
@@ -29,13 +27,11 @@ int print_binary(char *buff, va_list args, int buff_count)
 		idx++;
 	}
 
-	binary[idx] = '\0';
-
 	for (bin_len = 0; binary[bin_len] != '\0'; bin_len++)
 		;
 
-	while (bin_len >= 0)
-		buff[buff_count++] = binary[bin_len--];
+	while (binary[bin_len - 1] != '\0')
+		buff[buff_count++] = binary[--bin_len];
 
 	return (buff_count);
 }
