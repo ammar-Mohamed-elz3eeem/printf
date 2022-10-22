@@ -14,28 +14,33 @@ int print_binary(char *buff, va_list args, int buff_count)
 {
 	unsigned int bin;
 	unsigned int temp = 0;
-	char binary[255];
-	int idx = 0;
-	int bin_len;
+	char *binary;
+	int bin_len = 0, idx;
 
-	bin = va_arg(args, unsigned int);
+	bin = va_arg(args, int);
 	temp = bin;
 
 	if (temp == 0)
 	{
 		buff[buff_count++] = '0';
-		return buff_count;
+		return (buff_count);
 	}
 
 	while (temp > 0)
 	{
-		binary[idx] = (temp % 2) + '0';
 		temp /= 2;
-		idx++;
+		bin_len++;
 	}
 
-	for (bin_len = 0; binary[bin_len] != '\0'; bin_len++)
-		;
+	binary = malloc(sizeof(char) * (bin_len + 1));
+
+	temp = bin;
+
+	for (idx = 0; idx < bin_len; idx++)
+	{
+		binary[idx] = (temp % 2) + '0';
+		temp /= 2;
+	}
 
 	while (binary[bin_len - 1] && bin_len > 0)
 	{
