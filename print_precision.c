@@ -7,7 +7,7 @@
  * Return: current buff count
  */
 
-int print_precision(char *buff, va_list args, int buff_count)
+int print_precision(char *buff, __attribute__((unused)) va_list args, int buff_count)
 {
 	char precision;
 
