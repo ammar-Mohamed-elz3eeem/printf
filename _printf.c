@@ -22,19 +22,18 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] == '%')
+			if (buff_count == printer(format[i + 1], args, buffer, buff_count))
 			{
-				buff_count = print_precision(buffer, buff_count);
+				buff_count = print_letter(format[i], buffer, buff_count);
 			}
-			else if (format[i] == '\n')
+			else
 			{
-				buff_count = print_precision(buffer, buff_count);
-				buffer[buff_count++] = format[i];
-			}
-			else if (format[i] != '\0')
-			{
-				buff_count = printer(format[i], args, buffer, buff_count);
+				i++;
+
+				if (format[i] != '\0')
+				{
+					buff_count = printer(format[i], args, buffer, buff_count);
+				}
 			}
 		}
 		else

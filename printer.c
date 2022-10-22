@@ -17,6 +17,7 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 	    {'d', print_int},
 	    {'c', print_char},
 	    {'s', print_str},
+	    {'%', print_precision},
 	    {'\0', NULL}};
 
 	for (i = 0; printers[i].specefier != '\0'; i++)
@@ -27,5 +28,6 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 			return (buff_count);
 		}
 	}
-	return 0;
+
+	return (buff_count);
 }
