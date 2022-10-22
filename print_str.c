@@ -15,6 +15,9 @@ int print_str(char *buff, va_list args, int buff_count)
 
 	str = va_arg(args, char *);
 
+	if (str == NULL)
+		str = "(null)";
+
 	while (str[i] != '\0')
 	{
 		buff[buff_count] = str[i];
