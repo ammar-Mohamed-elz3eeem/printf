@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * print_binary - unsigned int argument is converted to binary
@@ -20,6 +21,12 @@ int print_binary(char *buff, va_list args, int buff_count)
 	bin = va_arg(args, unsigned int);
 	temp = bin;
 
+	if (temp == 0)
+	{
+		buff[buff_count++] = '0';
+		return buff_count;
+	}
+
 	while (temp > 0)
 	{
 		binary[idx] = (temp % 2) + '0';
@@ -30,8 +37,11 @@ int print_binary(char *buff, va_list args, int buff_count)
 	for (bin_len = 0; binary[bin_len] != '\0'; bin_len++)
 		;
 
-	while (binary[bin_len - 1] != '\0')
-		buff[buff_count++] = binary[--bin_len];
+	while (binary[bin_len - 1] && bin_len > 0)
+	{
+		buff[buff_count++] = binary[bin_len - 1];
+		bin_len--;
+	}
 
 	return (buff_count);
 }
