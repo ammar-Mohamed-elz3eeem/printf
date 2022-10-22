@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int buff_count = 0;
 	va_list args;
-	char buffer[1024];
+	char buffer[10000];
 
 	if (!format)
 		return (-1);
