@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _printf - print chars to stdout in formatted way
@@ -12,6 +13,7 @@ int _printf(const char *format, ...)
 	int buff_count = 0;
 	va_list args;
 	char buffer[10000];
+	int prev_buff_count;
 
 	if (!format)
 		return (-1);
@@ -22,17 +24,18 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (buff_count == printer(format[i + 1], args, buffer, buff_count))
+			i++;
+			if (format[i] != '\0')
 			{
-				buff_count = print_letter(format[i], buffer, buff_count);
-			}
-			else
-			{
-				i++;
-
-				if (format[i] != '\0')
+				prev_buff_count = printer(format[i], args, buffer, buff_count);
+				if (prev_buff_count == 0)
 				{
-					buff_count = printer(format[i], args, buffer, buff_count);
+					i--;
+					buff_count = print_letter(format[i], buffer, buff_count);
+				}
+				else
+				{
+					buff_count = prev_buff_count;
 				}
 			}
 		}

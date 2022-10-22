@@ -29,5 +29,5 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 		}
 	}
 
-	return (buff_count);
+	return 0;
 }
