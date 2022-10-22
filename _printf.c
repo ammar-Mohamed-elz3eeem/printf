@@ -9,11 +9,9 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int buff_count = 0;
+	int i = 0, buff_count = 0, prev_buff_count;
 	va_list args;
 	char buffer[10000];
-	int prev_buff_count;
 
 	if (!format)
 		return (-1);
@@ -39,15 +37,10 @@ int _printf(const char *format, ...)
 				}
 			}
 			else
-			{
 				return (-1);
-			}
 		}
 		else
-		{
-			buffer[buff_count] = format[i];
-			buff_count++;
-		}
+			buffer[buff_count++] = format[i];
 		i++;
 	}
 	va_end(args);

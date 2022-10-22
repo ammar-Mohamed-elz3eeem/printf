@@ -13,6 +13,13 @@ int print_str(char *buff, va_list args, int buff_count);
 int print_precision(char *buff, va_list args, int buff_count);
 int print_letter(char letter, char *buffer, int buff_count);
 
+/**
+ * struct printer_s - struct of charchter and
+ * the funtion associated with that charchter
+ * @specefier: char associated to specified function
+ * @printer: callback function to specifiec printer
+ */
+
 typedef struct printer_s
 {
 	char specefier;

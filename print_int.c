@@ -5,7 +5,7 @@
 /**
  * print_int - prints an integer to the output stream
  * @args: argument list of variadic function
- * @buff: buff to print data in
+ * @buff_dest: buff to print data in
  * @buff_count: count of the current integer in buffer
  * Return: current buff count
  */
