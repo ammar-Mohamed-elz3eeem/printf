@@ -24,9 +24,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] != '\0')
+			if (format[i + 1] != '\0')
 			{
+				i++;
 				prev_buff_count = printer(format[i], args, buffer, buff_count);
 				if (prev_buff_count == 0)
 				{
@@ -37,6 +37,10 @@ int _printf(const char *format, ...)
 				{
 					buff_count = prev_buff_count;
 				}
+			}
+			else
+			{
+				return (-1);
 			}
 		}
 		else
