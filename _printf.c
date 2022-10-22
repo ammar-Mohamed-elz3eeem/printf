@@ -27,6 +27,11 @@ int _printf(const char *format, ...)
 			{
 				buff_count = print_precision(buffer, buff_count);
 			}
+			else if (format[i] == '\n')
+			{
+				buff_count = print_precision(buffer, buff_count);
+				buffer[buff_count++] = format[i];
+			}
 			else if (format[i] != '\0')
 			{
 				buff_count = printer(format[i], args, buffer, buff_count);
