@@ -1,5 +1,6 @@
 #include "main.h"
 #include "limits.h"
+#include <stdio.h>
 
 /**
  * print_int - prints an integer to the output stream
@@ -9,7 +10,7 @@
  * Return: current buff count
  */
 
-int print_int(char *buff, va_list args, int buff_count)
+int print_int(char *buff_dest, va_list args, int buff_count)
 {
 	int tens = 1;
 	unsigned int tmp;
@@ -19,7 +20,7 @@ int print_int(char *buff, va_list args, int buff_count)
 
 	if (number < 0)
 	{
-		buff[buff_count] = '-';
+		buff_dest[buff_count] = '-';
 		number *= -1;
 		buff_count++;
 	}
@@ -37,7 +38,7 @@ int print_int(char *buff, va_list args, int buff_count)
 	tmp = number;
 	while (tens > 0)
 	{
-		buff[buff_count] = ('0' + tmp / tens);
+		buff_dest[buff_count] = ('0' + tmp / tens);
 		tmp %= tens;
 		tens /= 10;
 		buff_count++;

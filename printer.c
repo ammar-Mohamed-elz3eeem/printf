@@ -24,8 +24,8 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 		if (printers[i].specefier == specefier)
 		{
 			buff_count = printers[i].printer(buff, args, buff_count);
+			return (buff_count);
 		}
 	}
-
-	return (buff_count);
+	return 0;
 }

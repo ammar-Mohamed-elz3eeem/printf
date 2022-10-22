@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+	va_end(args);
 	write_buffer(buffer, buff_count);
 	return (buff_count);
 }
