@@ -34,6 +34,9 @@ int print_binary(char *buff, va_list args, int buff_count)
 
 	binary = malloc(sizeof(char) * (bin_len + 1));
 
+	if (binary == NULL)
+		return (buff_count);
+
 	temp = bin;
 
 	for (idx = 0; idx < bin_len; idx++)
