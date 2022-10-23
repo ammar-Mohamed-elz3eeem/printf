@@ -24,7 +24,6 @@ int print_custom_str(char *buff, va_list args, int buff_count)
 			int subidx = 0;
 			while (symbol_string[subidx])
 				buff[buff_count++] = symbol_string[subidx++];
-			// printf("%s \n\n", convert_to_hex('\n'));
 		}
 		else
 			buff[buff_count++] = str[idx];
