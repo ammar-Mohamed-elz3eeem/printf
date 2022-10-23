@@ -21,6 +21,7 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 	    {'u', print_unsigned},
 	    {'o', print_octal},
 	    {'%', print_precision},
+	    {'x', print_hexadecimal},
 	    {'\0', NULL}};
 
 	for (i = 0; printers[i].specefier != '\0'; i++)
