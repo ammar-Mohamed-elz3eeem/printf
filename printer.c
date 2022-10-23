@@ -18,6 +18,8 @@ int printer(char specefier, va_list args, char *buff, int buff_count)
 	    {'c', print_char},
 	    {'s', print_str},
 	    {'b', print_binary},
+	    {'u', print_unsigned},
+	    {'o', print_octal},
 	    {'%', print_precision},
 	    {'\0', NULL}};
 
