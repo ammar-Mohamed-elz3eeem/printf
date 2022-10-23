@@ -15,6 +15,8 @@ int print_letter(char letter, char *buffer, int buff_count);
 int print_binary(char *buff, va_list args, int buff_count);
 int print_unsigned(char *buff, va_list args, int buff_count);
 int print_octal(char *buff, va_list args, int buff_count);
+int print_hexadecimal(char *buff, va_list args, int buff_count);
+int print_hexadecimal_rec(unsigned int decimal_num, char *buff, va_list args, int buff_count, int hexlen);
 
 /**
  * struct printer_s - struct of charchter and
