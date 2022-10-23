@@ -17,14 +17,14 @@ int print_hexadecimal_uppercase(char *buff, va_list args, int buff_count)
 	unsigned int idx = 0;
 	char *hexstr;
 
+	decnum = va_arg(args, unsigned int);
+	temp = decnum;
 	if (temp == 0)
 	{
 		buff[buff_count++] = '0';
 		return buff_count;
 	}
 
-	decnum = va_arg(args, unsigned int);
-	temp = decnum;
 	while (temp > 0)
 	{
 		temp /= 16;
