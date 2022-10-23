@@ -18,6 +18,11 @@ int print_hexadecimal(char *buff, va_list args, int buff_count)
 
 	decnum = va_arg(args, unsigned int);
 	temp = decnum;
+	if (temp == 0)
+	{
+		buff[buff_count++] = '0';
+		return buff_count;
+	}
 	while (temp > 0)
 	{
 		temp /= 16;
