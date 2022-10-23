@@ -18,6 +18,9 @@ int print_octal(char *buff, va_list args, int buff_count);
 int print_hexadecimal(char *buff, va_list args, int buff_count);
 int print_hexadecimal_rec(unsigned int decimal_num, char *buff, va_list args, int buff_count, int hexlen);
 int print_hexadecimal_uppercase(char *buff, va_list args, int buff_count);
+int print_custom_str(char *buff, va_list args, int buff_count);
+char *convert_to_hex(int symbol);
+char *_strcat(char *dest, char *src);
 
 /**
  * struct printer_s - struct of charchter and
