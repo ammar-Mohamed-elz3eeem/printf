@@ -10,7 +10,6 @@
 
 int print_pointer(char *buff, va_list args, int buff_count)
 {
-	__uint64_t temp;
 	int idx = 0;
 	__uint64_t ptr = (__uint64_t)va_arg(args, void *);
 	char *addedstr;
