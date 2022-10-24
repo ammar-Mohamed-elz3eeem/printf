@@ -29,3 +29,32 @@ char *_strcat(char *dest, char *src)
 
 	return newstr;
 }
+
+char *hex_converter(__uint64_t num)
+{
+	__uint64_t temp;
+	int hexlen = 0, idx = 0;
+	char *hexstr;
+
+	temp = num;
+	while (temp > 0)
+	{
+		temp = temp / 16;
+		hexlen++;
+	}
+
+	hexstr = malloc(sizeof(char) * (hexlen + 1));
+
+	temp = num;
+	while (idx < hexlen)
+	{
+		if ((temp % 16) > 9)
+			hexstr[hexlen - idx - 1] = (temp % 16) + 87;
+		else
+			hexstr[hexlen - idx - 1] = (temp % 16) + '0';
+
+		temp /= 16;
+		idx++;
+	}
+	return hexstr;
+}
