@@ -38,6 +38,9 @@ char *_strcat(char *dest, char *src);
 char *hex_converter(__uint64_t num);
 int *parse_pointers(void *ptr);
 
+/* Handlers */
+int printer_handler(char *format, va_list args, char *buff, int buff_count);
+
 /**
  * struct printer_s - struct of charchter and
  * the funtion associated with that charchter
