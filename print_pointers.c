@@ -13,14 +13,12 @@ int print_pointer(char *buff, va_list args, int buff_count)
 	int idx = 0;
 	__uint64_t ptr = (__uint64_t)va_arg(args, void *);
 	char *addedstr;
+	char *ptrstr = hex_converter(ptr);
 
-	if (ptr == 0)
+	if (ptrstr == NULL)
 		addedstr = "(nil)";
 	else
-		addedstr = _strcat("0x", hex_converter(ptr));
-
-	if (addedstr == NULL)
-		return (buff_count);
+		addedstr = _strcat("0x", ptrstr);
 
 	while (addedstr[idx] != '\0')
 		buff[buff_count++] = addedstr[idx++];
