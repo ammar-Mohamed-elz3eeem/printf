@@ -32,6 +32,9 @@ char *_strcat(char *dest, char *src)
 
 char *hex_converter(__uint64_t num)
 {
+	if (num == 0)
+		return (NULL);
+
 	__uint64_t temp;
 	int hexlen = 0, idx = 0;
 	char *hexstr;
