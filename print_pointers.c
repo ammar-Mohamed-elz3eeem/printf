@@ -19,6 +19,9 @@ int print_pointer(char *buff, va_list args, int buff_count)
 	else
 		addedstr = _strcat("0x", hex_converter(ptr));
 
+	if (addedstr == NULL)
+		return (buff_count);
+
 	while (addedstr[idx] != '\0')
 		buff[buff_count++] = addedstr[idx++];
 
