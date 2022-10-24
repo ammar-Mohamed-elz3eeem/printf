@@ -45,6 +45,9 @@ char *hex_converter(__uint64_t num)
 
 	hexstr = malloc(sizeof(char) * (hexlen + 1));
 
+	if (hexstr == NULL)
+		return (NULL);
+
 	temp = num;
 	while (idx < hexlen)
 	{
